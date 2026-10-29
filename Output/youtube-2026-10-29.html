@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube-2026-10-29</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .responsive {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+
+        /* Add a hover effect (blue shadow) */
+        img:hover {
+            box-shadow: 0 0 4px 2px rgb(255, 230, 0);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 0.75rem;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background-color: #7fa7c5;
+            color: #fff;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="ytplayer" class="container"></div>
+
+    <script>
+        list = [
+            "aY4lpy9vV0Q",
+"StBoSfJKRgw",
+"9Ii34WheBOA",
+"U-jfICHae3w",
+"gQRmSlcTq9c",
+"ewN4_mcaI84",
+"64ftDUeUrQY",
+"-Zuq6UrEXKE",
+"evF6GuGpVZw",
+"WbCGv0Yml2Q",
+"X5yyKZpZ4vU",
+"oYnyNLj8RMA",
+"SXRQers9Tb8",
+"17xE-8UlV_Y",
+"m2EAQk4Qlew",
+"9pl55MxZlG4",
+"gYXLRMycVMk",
+"qTej1CIiJc0",
+"aZglGvBPQGs",
+"NzSCNjn4_RI",
+"JKVq_-uuELI",
+"h_DVfsD9PKI",
+"Em4BNYJpgTk",
+"8jrEVihl-E4",
+"xl4dvczQWOA",
+"8Dd7KRpKeaE",
+"0Zh5y2cFl6M",
+"RuTmd4g5K8Q",
+"3B_oB2YrLvk",
+"k9o7AbjLDTs",
+"XXPNpdaK9WA",
+"t__Cm5UhHdM",
+"kpIbcFeNKCw",
+"YgcEesCDIkw",
+"sxTmJE4k0ho",
+"cqfl38Ip1ho",
+"6OSpm4uXqDw",
+"Ai-WNEn9jLw",
+"rDSvBhY0VsQ",
+"4rUzyOIvAog",
+"hX8fj8SGZJs",
+"Cq-yARaVzIo",
+"hCL0sWxWJKw",
+"Lc5LKDqhyzs",
+"AUQJ9eeP-Ls",
+"U0cHgQgk1dw",
+"DLn3jOsNRVE",
+"Nxy_UROEkd4",
+"X1tBOyx3g9A",
+"c9AnqCeyxbI",
+"p-ji7n_plNg",
+"smKHKgedkP4",
+"Lx-kfm5jCUw",
+"RxGlB9U64fg",
+"i4qLI9lmkqw",
+"CG4WyImo72s",
+"GW0w97-urkg",
+"TuLxsvK4svQ",
+"f_9NBdSAo-g",
+"RYdAf2NH0TY",
+"_1P0Uqk50Ps",
+"pleHwE1swbY",
+"pTaybAHGENo",
+"hWGdSFH8haE",
+"ZLiePhKtqJU",
+"NpmFbWO6HPU",
+"mJc5gAnnlVQ",
+"Vde5SH8e1OQ",
+"bTHAsIJ3LAY",
+"IpMgCHpy93o",
+"Q4377DH5Jso",
+"2RBHgcRvcIE",
+"Q2D-rCyj2b0",
+"tG0QBCDquIM",
+"QVXKNAjl_0k",
+"MnG0ugK2JAI",
+"h4OEl6q9aSo",
+"Dw5wUUG97Sk",
+"wdEpWCFf40U",
+"NRIgLNzmnYY",
+"j8fj3y-wg3Y",
+"omU3zR3K7-U",
+"gh7ysyPAAjk",
+"6soT3DMBJGQ",
+"kwR6OLzti4M",
+"xd0N5_u9mvs",
+"jt8QSbkj-_k",
+"F_qSlx_GOco",
+"O58FGYYBV7U",
+"ZC9nwou59ow",
+"ygXn5nV5qFc",
+"7bA4aMENREE",
+"TtuCgQyrvJA",
+"xOxPHhgs330",
+"mAh_qvlJvac",
+"lHa11Ub_JCY",
+"yGiV6CpkgIo",
+"iaIooM9FlRI",
+"RyKrG8rTGUY",
+"xM4f30YObaE",
+"FUfEDWiK_IM",
+"txt8yCR3xWk",
+"lA0E7UwuuVE",
+"19ghd8izkug",
+"fHHrzPUZlJw",
+"rOse3dKQ1tY",
+"dt1eK_4rCAM",
+"Y2wfIKQyd1I",
+"3tYj-9f4dA0",
+"eSMtCGS6_dg",
+"vEO0bmgIPZM",
+"GBT5A0m4LlM",
+"kBC55OvJ6Fo",
+"7yNvsFrwpp0",
+"6PSBaxlBqRg",
+"woRba5SXxKg",
+"WRjXIA5pMtk",
+"yWkpRdpOiPY",
+"yxa-DJuuTBI",
+"JGly6PSK5iw",
+"N4veA1HOhe4",
+"iWS9ogMPOI0",
+"lLp58sDAixQ",
+"ORHH0n_BVfk",
+"i1dJTrDuGVc",
+"7XCFc6JfJIg",
+"p3tSLatmGvU",
+"YYXdXT2l-Gg",
+"f7eQ2lQv-NI",
+"YhatZb5SzE0",
+"4wuIOcD1LLI",
+"ne3zgIEpbyQ",
+"oQTxJrDRCxg",
+"0eMm7k3H0vA",
+"pBWPH4ggky8",
+"TyXd761Ye2s",
+"lvX4vlzuZJc",
+"XQyoavGNMJ4",
+"gNLp6g1qT38",
+"G4NIB9Rx9Qs",
+"2dH_qjc9mFg",
+"IfMEy4Hlc0g",
+"zpxL0WckDVc",
+"m8M2l6wtFIE",
+"3RjQznt-8kE"           
+        ]
+        titles = [
+            "Using Hatch for Python Project Management",
+"Solve Last Layer Of Rubiks Cube|Easy Method",
+"Create Your Own Python PIP Package",
+"Tkinter Designer: Modern GUIs with Drag & Drop",
+"No AI, 52 min. Build all Linux Files utils in C by Hand",
+"HTML CSS JavaScript Tutorial for Beginners | Build Admin Dashboard From Scratch",
+"Top RICHEST COMPANIES Of The World 2025",
+"Every Python Package Manager Explained",
+"What is Stored Procedure| How to create & Run Stored Procedure in Oracle? | Oracle Database Tutorial",
+"PyQt6 Data entry form for Excel Tutorial",
+"Python Tkinter Tutorial (Part 2): Using Classes for Functionality and Organization",
+"Keras Tuner | Hyperparameter Tuning a Neural Network",
+"How to Solve a 3x3x3 Rubik's Cube  Easiest Tutorial Last Layer",
+"Qt GUI using Qt Designer for Multiple Windows",
+"The Anatomy of Python Packages and pyproject.toml",
+"Create Python buttons in 7 minutes! 🛎️",
+"MCP Security Fundamentals Course",
+"PYTHON Full Course - Beginners to Super - Part 1",
+"Jev Course – Prefill-Only Inference & Decision Models from Scratch",
+"Simple GUI Calculator in Python",
+"PyQt5 Programs | Menu Structure for applications",
+"How to use Qt Layouts",
+"UV Python Tutorial: 10-100x Faster Than pip! Complete Guide 2025",
+"Introduction to GUIs in Python with PyQt5",
+"AI Engineer Full Course in 43 Hours 2027 |  Complete AI Engineering Course | Simplilearn",
+"Git, GitHub, & GitHub Desktop for beginners",
+"12 EASIEST OLL ALGORITHMS TO LEARN! (Beginners 1-Look OLL | CFOP)",
+"14 Hours of Python Game Development - from Beginner to Advanced",
+"Advanced F2L Tutorial (CFOP)",
+"OWASP Top 10 Full Course — All 10 Web Vulnerabilities Explained for Beginners",
+"QtDesigner and PyQt5:  The right and wrong way to use them together",
+"5 Beginner Mistakes You Should Avoid In Python",
+"PyQt5 FULL Modern Gui Tutorial #3 - Create Account Form: GUI & Database [for beginners]",
+"How to Create an Excel Dashboard with Copilot",
+"The Complete Python Course For Beginners",
+"How Ethical Hackers Actually Break Into Systems",
+"Python HOW TO structure a Beginner OR Advanced Projects ?",
+"Paano bumuo Ng Rubik's Cube| Basic Step| Tagalog tutorial| Leinee Yala| vlog #12",
+"Creating Desktop Apps With Python - Lesson 5 ( Qt Designer - calculator )",
+"What are data agents? What is the commons package?",
+"PyQt5 Tutorial | Quick Guide",
+"The SIMPLEST Way to Become Good at Coding",
+"CLAUDE.md, AGENTS.md and SKILL.md Explained for Beginners",
+"The Ultimate Python Course For Beginners (Learn How To Code in 2026)",
+"How to Build a Production-Ready RAG AI Agent in Python (Step-by-Step)",
+"PyQt5 Tutorial -  Introduction & Installation To PyQt5 | Create GUI Window",
+"5 Mini Python Projects - For Beginners",
+"I Wish Someone Explained Programming to Me Like This",
+"Write Better VBA Code by Separating It Into Layers",
+"Building AI Agents in Pure Python - Beginner Course",
+"5 Easiest OLLs that look hard (CFOP)",
+"تعلم بايثون في فيديو واحد  python (حصري) 6 ساعات بإتقان learn python in one video",
+"PyQt6 - Build Desktop Apps with Python - Intro and Core Concepts!",
+"PyQt5 FULL Modern Gui Tutorial #1 - Welcome Screen [for beginners]",
+"Work with Tkinter Treeview Table with Search box | All Explained In 1 Video",
+"Complete FastAPI Course 2027  | Learn FastAPI to Build Scalable Backend  (Beginner to Advanced)",
+"How to create  a Login System in Python | Build Simple GUI Login System | #Python",
+"Python Tkinter Full Course for free 🐍",
+"Python App Development: Build Modern GUIs in 7 Hours (Beginners Course)",
+"Create Multiple Pages/Screens Using Python 3, Qt Designer, PySide2 or PyQt5 (Stacked Widget)",
+"The Ultimate FastAPI + React Full Stack Project (Deploy This and You’re Set)",
+"PyQt5 FULL Modern Gui Tutorial #2 - Login Form: GUI & Database [for beginners]",
+"PyQt6 Full Course in Udemy  -  PyQt Full Course - Python GUI Development",
+"PyQt5 Programs | Password Management and Creator:  Part2 Login and Register window Create",
+"How do you gain domain experience you don't have? | Dwight Barry | Data Science Hangout",
+"9 HOURS of Python Projects - From Beginner to Advanced",
+"Python Invoice Generator tutorial for beginners - Python GUI Automation project [resume project]",
+"PyQt5 Tutorial - Setup and a Basic GUI Application",
+"Build a Profit Calculator GUI in PySide6 | Real Business Case Study (Python)",
+"2 Look OLL is easy, here's how #rubikscube",
+"Create a weather app with Python! ☀️",
+"AWS AI Practitioner Certification Full Course (AIF-C01) - Pass on Your First Try [9 Hours]",
+"Free Developer Websites Nobody Tells You About",
+"How To Make Grid Table With Search Box | QtDesigner |  PyQt6 | QTableWidgets | Pythonic Design",
+"Full PLL: Algs & Finger Tricks [My Algs 2025]",
+"Build Your Own AI Agent – Full Course with OpenAI, Langchain, Render Deployment",
+"How to  Install Microsoft Office 2024 LTSC – Step-by-Step Guide (Official Method)",
+"PyQt5 Programs | Password Management and Creator:  Part3 Create Main Window",
+"Create a Python Audio App with PyQt – Fast & Easy GUI Development",
+"Why Dataclasses Disappear in Real Python Applications",
+"How to Build Music Player in Python",
+"The Best AI Automation Stack to Learn in 2026",
+"Fifteen Puzzle Game | Javascript",
+"Object Oriented Programming in python",
+"Blackjack Five Card Win - PyQt5 GUI Thursdays #53",
+"CRM App With Treeview and SQLite3 - Tkinter Projects 16",
+"Intro to OLL – Easiest Solve",
+"How To Connect SQLite Database In Android Studio | Mobile App Development Tutorial",
+"How To Create Combo Boxes - PyQt5 GUI Thursdays #2",
+"2 Look PLL | Beginner CFOP",
+"Python for AI - Full Beginner Course",
+"Which is best? Five ways of presenting paired data (CC430)",
+"This Practice will DESTROY your records",
+"I Found 7 FREE GitHub Repos to Build Better AI Trading Bots",
+"Creating Desktop Apps With Python  - Lesson 1",
+"PyQt5 Programs | Get and Show Data from MySQL Database",
+"HOW TO SOLVE A 3X3 RUBIK'S CUBE TAGALOG | EASY METHOD",
+"Modern Gui Python - Flat Style - PySide2/PyQt5/Qt Designer - [FREE DOWNLOAD]",
+"Backpropagation In Depth",
+"Crea un Dashboard IoT Moderno con Python | PyQt6 + Qt Designer",
+"Complete Jamovi Tutorial for Beginners  Data Analysis in 30 Minutes with Interpretation (FREE)",
+"AI Engineer Full Course 2026 | Complete AI Engineer Course | Simplilearn",
+"Validating IOptions At Startup in C#",
+"Explore an Unfamiliar PostgreSQL Database with VS Code and Copilot",
+"How do you get people to show up to things? | Data Community Building Q&A | Data Science Hangout",
+"Modern C",
+"Agentic Engineering Roadmap For Beginners",
+"What is Recurrent Neural Network (RNN)? Deep Learning Tutorial 33 (Tensorflow, Keras & Python)",
+"All Standard F2L Cases [Intuitive F2L Mastery]",
+"Microsoft Ruined Office. People Found a Better Way.",
+"Which Tool Handles a Multi-Level Bill of Materials Best? | Excel vs Power Query vs SQL vs Python",
+"F2L Cases You NEED To Learn! | CFOP Tutorial",
+"Spec-Driven Development in 7 Minutes | Stop Vibe Coding in 2026",
+"MCP vs API Explained: Do We Still Need API After MCP?",
+"2 Look OLL | Beginner CFOP",
+"Raven - An Open Source Modern GUI Library Built with C & Vulkan",
+"Python FastAPI Tutorial (Part 3): Path Parameters - Validation and Error Handling",
+"Cryptocurrency-predicting RNN Model - Deep Learning w/ Python, TensorFlow and Keras p.11",
+"Python Tutorial: Pathlib - The Modern Way to Handle File Paths",
+"Gemini 4 Argon API Crash Course",
+"Real Python Live: Does a Better Prompt Really Help?",
+"Python FastAPI Tutorial: Build a REST API in 15 Minutes",
+"Write and Optimize PostgreSQL Queries Faster in VS Code with Copilot",
+"Stop Confusing Inheritance & Method Overriding!",
+"How To Extract Text From PDF Files - Tkinter Projects 6",
+"Python Για Αρχάριους | FULL COURSE Ελληνικά",
+"Convert GUI App to Real Program -  Python to exe to setup wizard",
+"Python Tutorial for Beginners 1: Install and Setup for Mac and Windows",
+"Python argparse and command line arguments",
+"How Many Hidden Layers and Neurons does a Neural Network Need",
+"RNN From Scratch In Python",
+"Code a Mini Minecraft in Python in 114 Seconds!",
+"Pyside2 Introduction & Installation | Qt For Python | Python GUI Development | Pyside2 Vs PyQt5",
+"How to Build an App with Azure SQL Using AI Coding Agents | Data Exposed",
+"Python For Beginners - Booleans Explained",
+"Troubleshoot and Optimize PostgreSQL Performance in VS Code",
+"Move Your Player in Python Ursina – Lesson 2",
+"Ο Πρόεδρος του Ισραήλ προωθεί κυβέρνηση εθνικής ενότητας Νετανιάχου-Άιζενκοτ",
+"🍰 Compare Models & Harnesses with Agent Bake Off!",
+"Python FastAPI Tutorial (Part 2): HTML Frontend for Your API - Jinja2 Templates",
+"100 Days of Deep Learning | Course Announcement",
+"Carpenters Don't Tell You This 😱! Repair Broken Hinges in Minutes With This Simple Trick!",
+"18 - Properties of Logarithms (Log x) - Part 1 - Laws of Logs - Calculate Logs & Simplify",
+"Pyside2 GUI Development | Creating Different Icon Modes | Qt For Python",
+"Git & GitHub Tutorial for Beginners #1 - Why Use Git?"           
+        ]
+
+        s = list.map((x) => {
+            return `
+                <div>
+                    <a href="https://www.youtube.com/watch?v=${x}" target="_blank">
+                        <img src="https://i.ytimg.com/vi/${x}/hqdefault.jpg" class="responsive">
+                    </a><br/>
+                    <p>${titles[list.indexOf(x)]}</p>
+                </div>
+            `;
+        });
+
+        ytplayer = document.getElementById("ytplayer");
+        s.forEach((x) => {
+            ytplayer.innerHTML += x;
+        });
+
+    </script>
+</body>
+
+</html>

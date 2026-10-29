@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"<PAGE TITLE>"</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .responsive {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+
+        /* Add a hover effect (blue shadow) */
+        img:hover {
+            box-shadow: 0 0 4px 2px rgb(255, 230, 0);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 0.75rem;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background-color: #7fa7c5;
+            color: #fff;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="ytplayer" class="container"></div>
+
+    <script>
+        list = [
+            "<VIDEO_LIST_IDS>"           
+        ]
+        titles = [
+            "<VIDEO_TITLES>"           
+        ]
+
+        s = list.map((x) => {
+            return `
+                <div>
+                    <a href="https://www.youtube.com/watch?v=${x}" target="_blank">
+                        <img src="https://i.ytimg.com/vi/${x}/hqdefault.jpg" class="responsive">
+                    </a><br/>
+                    <p>${titles[list.indexOf(x)]}</p>
+                </div>
+            `;
+        });
+
+        ytplayer = document.getElementById("ytplayer");
+        s.forEach((x) => {
+            ytplayer.innerHTML += x;
+        });
+
+    </script>
+</body>
+
+</html>
