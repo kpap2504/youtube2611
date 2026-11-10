@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyQt6_2026-11-10a</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .responsive {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+
+        /* Add a hover effect (blue shadow) */
+        img:hover {
+            box-shadow: 0 0 4px 2px rgb(255, 230, 0);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 0.75rem;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background-color: #7fa7c5;
+            color: #fff;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="ytplayer" class="container"></div>
+
+    <script>
+        list = [
+            "RyZwHag5VTg",
+"mkKfJS5vNnY",
+"h_DVfsD9PKI",
+"imL4sBSFcNc",
+"Fk1TBoBcrR4",
+"_SbtcUUAm6g",
+"pV8wRgHqmaQ",
+"X8fY8uFgzb4",
+"Hwk242UMFR8",
+"FxgJQIIgZB8",
+"Vde5SH8e1OQ",
+"rcBQVvnE-80",
+"jobpptS9f8I",
+"4ZRPWvjnA3Y",
+"tiMHtc6l7xM",
+"mFzNnIZSLHE",
+"d1effP4qW9k",
+"HzjYchOrqwk",
+"AwZ_KRe_S8w",
+"vrwNbIym9hY",
+"B31LgI4Y4DQ",
+"P5QYjM0Kf8g",
+"KscFyux4dVk",
+"oRYxRsO-qr0",
+"rCkYVxOX-dI",
+"kQ8DGP9p2LY",
+"rbrXINV0O54",
+"6biMWgD6_JY",
+"MOItX2aKTGc",
+"Gpw6BygkUCw",
+"4CZkIjZgvfQ",
+"w0wKN5L1HYI",
+"Z1PDD6qsdmI",
+"adC48qZ8p5Y",
+"_1P0Uqk50Ps",
+"xaVBYT8ku38",
+"5S2paeDKTLk",
+"f_9NBdSAo-g",
+"BGJ5ZBXMkfY",
+"zfLc45RQ9Zk",
+"X8fY8uFgzb4",
+"pleHwE1swbY",
+"44IbJnTiKRg",
+"dq4zVU72qWs",
+"99TLYal4lKE",
+"uXlL2PeuLpQ",
+"uzqDnB44qf4",
+"82v2ZR-g6wY",
+"6MZp1OXHsaw",
+"ix9cRaBkVe0",
+"9_NGCpM2r7s",
+"95tJO7XJlko",
+"lKusotIjzwk",
+"PQjxsb_7bY4",
+"tiMHtc6l7xM",
+"s72xCnaidso",
+"RpWeNzfSUHw",
+"crgQOez8d4k",
+"N2JfygnWJaA",
+"6pttmsBSi8M"           
+        ]
+        titles = [
+            "How to Download & Set Up VS Code for PySide 6 | Activate the Right View!",
+"TUTO Python / PySide / Qt : Prise en main du générateur d'interfaces graphiques \"Qt Designer\"",
+"How to use Qt Layouts",
+"Interfaces Graficas con PyQT6 y Python",
+"PyQt5 Full Course in 7 Hours | Python GUI Course",
+"School Management Front-End in PySide6 + Qt Designer — Add Students, Filter, Search, MySQL",
+"Create A Login Form App Connected To A Database | PyQt6 Tutorial",
+"Python Desktop GUI App with SQLite DB (PyQt/PySide/Qt Designer) | Modern GUI",
+"Master PyQt5 part 10: Make responsive GUIs with Threads",
+"Python System Tray And Notifications | Pyside2/6 | Pyqt5/6 | Desktop App  Project | Action Menu",
+"PyQt5 Tutorial - Setup and a Basic GUI Application",
+"Python GUI Window with PySide6 (Qt for Python)",
+"Python SQL Alchemy: Never Write SQL Syntax Again",
+"I Wish Someone Explained Linux to Me Like This",
+"No AI. Build your own tree directory viewer in C by hand",
+"PyQt5 Tutorial #14 - Open Files with QFileDialog (2 Methods)",
+"Create a Interactive Business Performance Dashboard in Excel | Beginner to Pro",
+"HTTPS vs SSL vs TLS: The Difference in 10 Minutes",
+"Create Your Own Google Chrome Using Python | PyQt5 | Project For Beginners",
+"Systems Thinking",
+"Data Structures - Full Course Using C and C++",
+"Stop Building Tutorial Projects. Build This Instead!",
+"Forget Claude Code: DeepSeek + REA Clones Anything 100% FREE (No Paid API)",
+"Convert PDFs and Excel Into LLM-Ready Markdown With Python",
+"Build Your First AI Agent in 20 Minutes (No Coding)",
+"The ultimate introduction to PySimpleGUI [ Creating apps in Python ]",
+"QML Item Placement Strategies: Dead Reckoning and Anchors",
+"Tailwind CSS v4 Full Course 2026 | Master Tailwind in One Hour",
+"Python GUI Development Using PyQt5",
+"Python and MongoDB #04 - Create PySide QTableView QAbstractTableModel to populate MongoDB Data",
+"Video 1: Introduction to python-oracledb",
+"AlgoTrading For Beginners - Full Course in Python",
+"Разработка ПО на языке Python (онлайн лекция 7, создание интерфейсов на PySide6)",
+"22 Modern UI - A Python App GUI For QT, PyQt, PySide Desktop App | Custom Widgets Module Tutorial",
+"The Ultimate FastAPI + React Full Stack Project (Deploy This and You’re Set)",
+"Modern animated Login Signup Form : UI/UX GUI",
+"Interfaces gráficas com QT e PySide | Live de Python #209",
+"Python App Development: Build Modern GUIs in 7 Hours (Beginners Course)",
+"PySide6 설치 및 Visual Studio Code 개발환경",
+"QTableWidget - Python PyQt5 Qt Designer",
+"Python Desktop GUI App with SQLite DB (PyQt/PySide/Qt Designer) | Modern GUI",
+"PyQt5 FULL Modern Gui Tutorial #2 - Login Form: GUI & Database [for beginners]",
+"Responsive And Animated Admin Dashboard | Python QT | QT Designer | PySide | PyQt | Modern GUI",
+"Python Hatch Tutorial: uv, Cookicutter & More",
+"Разработка на python / PySide6 работа с QTableView",
+"PyQt5  open File Dialog and read file or ( browse File)",
+"A basic PySide6 and Qt Designer tutorial.",
+"Multiple Screens in PyQt5: Switch screens without opening a new window",
+"TUTO Python / PySide / Qt : Deux approches distinctes de Qt",
+"Python Full Course for free 🐍",
+"PySide6 Crash Course: GUI Development in Python with Qt6",
+"Tkinter Multiple Pages GUI: Switch Frames in Tkinter | Multi-Page Python App Tutorial",
+"Hyperparameter Tuning For Neural Networks in Python",
+"This AMAZING Trick Can Solve Extreme Sudoku",
+"No AI. Build your own tree directory viewer in C by hand",
+"PyQt6 Tutorial Series - Creating a Basic GUI Application in Python",
+"Chat Bot With PyTorch - NLP And Deep Learning - Python Tutorial (Part 1)",
+"Learn Python in 2 Hours — Complete Course for Beginners [2026]",
+"Event handling with signals & slots in PyQt6 | PyQt6 Tutorial Part 3",
+"Stop Using Pip - This New Tool is 100x Faster (UV Tutorial)"           
+        ]
+
+        s = list.map((x) => {
+            return `
+                <div>
+                    <a href="https://www.youtube.com/watch?v=${x}" target="_blank">
+                        <img src="https://i.ytimg.com/vi/${x}/hqdefault.jpg" class="responsive">
+                    </a><br/>
+                    <p>${titles[list.indexOf(x)]}</p>
+                </div>
+            `;
+        });
+
+        ytplayer = document.getElementById("ytplayer");
+        s.forEach((x) => {
+            ytplayer.innerHTML += x;
+        });
+
+    </script>
+</body>
+
+</html>

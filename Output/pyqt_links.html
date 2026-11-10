@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pyqt_links</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .responsive {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+
+        /* Add a hover effect (blue shadow) */
+        img:hover {
+            box-shadow: 0 0 4px 2px rgb(255, 230, 0);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 0.75rem;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background-color: #7fa7c5;
+            color: #fff;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="ytplayer" class="container"></div>
+
+    <script>
+        list = [
+            "xaVBYT8ku38",
+"OY134jpezrQ",
+"kL2kWyPa1IU",
+"lB-3QaV9MmE",
+"C8R5zt7TIVU",
+"l2OoXj1Z2hM",
+"e_PHA6tTooY",
+"DtsTb6yQy1E",
+"o0CBAyP3zOE",
+"4y9BWBkj9Bo",
+"XXPNpdaK9WA",
+"a7iFHz70J1I",
+"jrlRPjyefe8",
+"f_9NBdSAo-g",
+"7DXxQV47jOU",
+"wuO-KMwXhP4",
+"adC48qZ8p5Y",
+"lHa11Ub_JCY"           
+        ]
+        titles = [
+            "Modern animated Login Signup Form : UI/UX GUI",
+"5 Python GUI Designers You Should Know : Drag & Drop",
+"Python Tutorial, GUI-App mit Qt: #3 Daten aus SQLite",
+"Python Tutorial deutsch, Grafisches Datenbank-Frontend, Teil 5: Serienbrief erzeugen",
+"Python Tutorial deutsch, #1 Warum Python?",
+"PyQt : Show Data Into QTableWidget From Database.",
+"8- Python & PyQt5: Load Data from Database and display in GUI Table",
+"Making Desktop Application with Python & QT Designer EASILY (Along side PyQt6)",
+"Build a Modern Python Sidebar Menu with PySide6 & Qt Designer | Context Menus + Stacked Pages",
+"Python: Build a Fitness Tracker Desktop App from Scratch with PyQt and SQL",
+"QtDesigner and PyQt5:  The right and wrong way to use them together",
+"Master PyQt5 part 6:  QMainWindow for easy apps",
+"SQL per tutti con Sqlite3",
+"Python App Development: Build Modern GUIs in 7 Hours (Beginners Course)",
+"PyQt5 Programs | Sidebar example of application",
+"Tkinter + Bootstrap Theme - ttkbootstrap - Complete App",
+"22 Modern UI - A Python App GUI For QT, PyQt, PySide Desktop App | Custom Widgets Module Tutorial",
+"PyQt5 Programs | Get and Show Data from MySQL Database"           
+        ]
+
+        s = list.map((x) => {
+            return `
+                <div>
+                    <a href="https://www.youtube.com/watch?v=${x}" target="_blank">
+                        <img src="https://i.ytimg.com/vi/${x}/hqdefault.jpg" class="responsive">
+                    </a><br/>
+                    <p>${titles[list.indexOf(x)]}</p>
+                </div>
+            `;
+        });
+
+        ytplayer = document.getElementById("ytplayer");
+        s.forEach((x) => {
+            ytplayer.innerHTML += x;
+        });
+
+    </script>
+</body>
+
+</html>

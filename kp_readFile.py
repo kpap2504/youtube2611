@@ -3,6 +3,7 @@ import pandas as pd
 import time
 from tqdm import tqdm
 import string
+import os
 
 #'title','description','duration','views','likes','dislikes','comments'
 
@@ -52,14 +53,10 @@ def process_videos(file_path):
     else:
         return None
 
-        
-# Example usage
-if __name__ == "__main__":
-    file_name = "youtube-sample.txt"   # Replace with your file path
-    file_name = "youtube-2026-10-29.txt"  
+def get_youtube_links(file_path):
+    file_name = file_path.split('/')[-1]  # Extract the file name from the path
+    file_name = os.path.basename(file_path)
 
-#    data = read_file(f"data/{file_name}", header=None)
-    
     list_url = []
     list_video_id = []
     list_title = []
@@ -71,7 +68,7 @@ if __name__ == "__main__":
     list_dislikes = []
     list_comments = []
 
-    processed_videos = process_videos(f"data/{file_name}")
+    processed_videos = process_videos(file_path)
     if processed_videos is not None:
         for video_info in processed_videos:
             list_url.append(video_info['url'])
@@ -127,5 +124,13 @@ if __name__ == "__main__":
     # Write the modified content to a new HTML file
     with open(f"Output/{playlist_title}.html", 'w', encoding='utf-8') as f:
         f.write(html_content)   
+
+    return list_video_id
+
+# Example usage
+if __name__ == "__main__":
+    file_path = r"Data\pyqt_sample.txt"
+    get_youtube_links(file_path)    
+    
 
 

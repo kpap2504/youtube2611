@@ -28,3 +28,9 @@ Python 3.10.22
 # GitHub source code
 - https://github.com/PacktPublishing/Python-GUI-Programming-A-Complete-Reference-Guide
 - 
+
+
+
+# PyQt6
+https://www.pythontutorial.net/tkinter/tkinter-open-file-dialog/
+https://pyinmyeye.blogspot.com/2012/08/tkinter-filedialog-demo.html

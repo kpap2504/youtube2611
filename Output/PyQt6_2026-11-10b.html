@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyQt6_2026-11-10b</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .responsive {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+
+        /* Add a hover effect (blue shadow) */
+        img:hover {
+            box-shadow: 0 0 4px 2px rgb(255, 230, 0);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 0.75rem;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background-color: #7fa7c5;
+            color: #fff;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="ytplayer" class="container"></div>
+
+    <script>
+        list = [
+            "20ed0Ytkxuw",
+"PkdOv23lr2Y",
+"4fqDlIgzoe4",
+"ZyDvBfiiFVM",
+"lB-3QaV9MmE",
+"HD5xacNn-5o",
+"RcQdWUsqs3c",
+"7YEHs2SMaVQ",
+"-kECKWyCfow",
+"LJ_HY0AKZnM",
+"SSKVgrwhzus",
+"pQK6V8NoDe0",
+"Mxx6imqkkSA",
+"BvtIqaiabJA",
+"Nq2l8tqNV7I",
+"kpIbcFeNKCw",
+"RNEcewpVZUQ",
+"M7UdAX77kpY",
+"4Jzs4R4o9Cw",
+"abH5tWY2wXA",
+"WGJC5vT5YJo",
+"f_9NBdSAo-g",
+"RxGlB9U64fg",
+"mAFoROnOfHs",
+"dZh68SpsgoI",
+"a7iFHz70J1I",
+"gC3z3vHYsmM",
+"9dioXZS4h4Q",
+"wOxzhX0QnAw",
+"gzoWIJQDA1c",
+"EmZZvBEKBxc",
+"Lbfe3-v7yE0",
+"F8min4ZZJaI",
+"7_yeA1xbgDQ",
+"2D05tvP4Gm0",
+"byHcYRpMgI4",
+"mw1g944flJY",
+"C8R5zt7TIVU",
+"vUXY_ZoyZG0",
+"-5jZ-ETVssQ",
+"MM5gNFZ92DU",
+"1ObzpG_W_0o",
+"rE_bJl2GAY8",
+"QECs01n0aZE",
+"klyflHG4aHE",
+"KS6sXi5ZZzg",
+"M7UdAX77kpY",
+"DdZaAFfsfPY",
+"wTHq_5jZmmY",
+"QUen46LXBhc",
+"i4qLI9lmkqw",
+"45P3xQPaYxc",
+"2EjrLpC4cE4"           
+        ]
+        titles = [
+            "Python QT Charts | Creating And Customizing Charts | Graphs | Pyside | PyQt | Interface Design #1",
+"How to Create an Employee Database Management System using MySql in Visual C++ - Full Tutorial",
+"PyQt5 Tutorial #17 - Creating a Menu Bar with Menus & Actions & Keyboard Shortcuts",
+"Master Dependency Management with Poetry in Python | Full Beginner's Tutorial (2025)",
+"Python Tutorial deutsch, Grafisches Datenbank-Frontend, Teil 5: Serienbrief erzeugen",
+"CRUD PYTHON + TKINTER + Base de Datos  Explicado Fácilmente Parte 1.",
+"Install and Setup PySide6 and Qt Designer [PySide6 tutorial]",
+"Andrej Karpathy: \"99% Use AI & LLMs Wrong\" (Here’s How He Does It)",
+"How to Create Data Entry Form using MySQL Database in Visual C++ - Full Tutorial",
+"4 Years of Computer Science Degree in 4 Hours - Full Course (FREE)",
+"SQL Full Course for Beginners (30 Hours) – From Zero to Hero",
+"Coding a Memory Allocator From Scratch | Programming Live | First Malloc Implementation",
+"Hyperparameter Tuning Explained in 14 Minutes",
+"REST API Design Like a Senior Engineer (REST, GraphQL, Networking, Pagination, Auth, Security)",
+"LeetCode | Python | HHKB Type-S | 40 min real time | no talking | EP-55",
+"PyQt5 FULL Modern Gui Tutorial #3 - Create Account Form: GUI & Database [for beginners]",
+"Create A Chatbot GUI Application With Tkinter - Python Tutorial",
+"Master PyQt5 part 1:  Hello World and Template",
+"How to make forms in HTML",
+"C# Full Project (School Management System) with Source Code",
+"Python Network Packet Sniffer Tutorial - 1 - Introduction",
+"Python App Development: Build Modern GUIs in 7 Hours (Beginners Course)",
+"PyQt5 FULL Modern Gui Tutorial #1 - Welcome Screen [for beginners]",
+"Git & GitHub Crash Course for Beginners [2026]",
+"I Bet Nobody Has Ever Explained the OOP Concepts Like This Before",
+"Master PyQt5 part 6:  QMainWindow for easy apps",
+"PyQt5-MySQL #2: CRUD, Widget, Form: Table, LineEdit, Button",
+"Python Tutorial, GUI-App mit Qt: #4 Button Action",
+"Master PyQt5 part 5: Moving data between windows",
+"Qt6 C++ Full Course with QML For Beginners",
+"3. Python   PyQt Containers and Layouts",
+"Sockets Tutorial with Python 3 part 1 - sending and receiving data",
+"QTableView Galore",
+"2  PyQt5 QDate, QTime, QDateTime Python GUI Programming",
+"Menú Lateral en Python con PySide2 / PyQt5   - Qt Designer",
+"SQLite Databases With Python - Full Course",
+"Master C programming - SEVEN hour Advanced course",
+"Python Tutorial deutsch, #1 Warum Python?",
+"How to make CRUD Application With Pyside6 and Sqlite Database | 2023",
+"CSS Inverted border-radius Card | Curve Outside",
+"UI/UX Design Full Course 2027 | Learn Web Designing Complete Course  for Beginners | Simplilearn",
+"Python Reverse Shell Tutorial - 1 - Creating a Socket",
+"Python MongoDB Tutorial using PyMongo",
+"Qt 6 - Episode 27 - Qt Widgets vs QML and Qt Quick",
+"Master PyQt5 part 7: Using images and icons",
+"Python Tutorial, GUI-App mit Qt: Warum Qt?",
+"Master PyQt5 part 1:  Hello World and Template",
+"Applied Data Science with Python 2027 | Applied Data Science Full Course | Simplilearn",
+"Pydantic Tutorial EP1 - Basic Models, Optionals & Defaults",
+"Make GUI Applications In Python With PyQt6 | PyQt6 Tutorial Part 1",
+"Work with Tkinter Treeview Table with Search box | All Explained In 1 Video",
+"Flask Full Course: Build Stunning Web Apps Fast | Python Flask Tutorial",
+"Everything about using Qt Designer! | PyQt6 Tutorial Part 4"           
+        ]
+
+        s = list.map((x) => {
+            return `
+                <div>
+                    <a href="https://www.youtube.com/watch?v=${x}" target="_blank">
+                        <img src="https://i.ytimg.com/vi/${x}/hqdefault.jpg" class="responsive">
+                    </a><br/>
+                    <p>${titles[list.indexOf(x)]}</p>
+                </div>
+            `;
+        });
+
+        ytplayer = document.getElementById("ytplayer");
+        s.forEach((x) => {
+            ytplayer.innerHTML += x;
+        });
+
+    </script>
+</body>
+
+</html>
